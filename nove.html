@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>move</title>
+    <style>
+        #odiv div{
+            background-color: firebrick;
+            height: 200px;
+            width: 200px;
+            border: 2px solid salmon;
+            position: relative;
+            left: 0px;
+            opacity: 0.7;
+            filter: alpha(opacity:70);
+        }
+    </style>
+    <script src="jquery-2.2.3.js"></script>
+    <script src="move.js"></script>
+</head>
+<body>
+<div id="odiv">
+    <div>hhhh</div>
+    <div></div>
+    <div></div>
+</div>
+
+<script>
+    $(function () {
+        $('#odiv div:first-child').mouseover(function(){
+            $(this).startmove(this,80,'left');
+        })
+        $('#odiv div:first-child').mouseout(function(){
+            $(this).startmove(this,50,'left');
+        })
+    })
+</script>
+</body>
+</html>

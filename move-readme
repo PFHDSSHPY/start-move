@@ -1,0 +1,17 @@
+/**
+ * Created by huangyx4 on 2016/8/4 about move.js - $().startmove 补充及说明.
+ */
+
+关于功能:
+1.实现多物体的长宽高形变；（包含字体大小，border粗细等变化）
+2.实现多物体的透明度变化（兼容IE和chrome，Firefox）
+3.实现多物体运动，简单位移变化；
+参数有：（obj:选中对象;iTarget:目标系数;attr:变化属性;）
+
+关于实现思路：
+1.startmove（）利用setinterval实现运动变化；
+2.使用offset的方式获取对象样式有bug，offset获取的样式是包含padding以及border的样式，而
+style本身获取的样式是纯粹element的样式，所以需要getStyle方法（包含获取currentStyle和getComputiStyle，用
+DOM的方式获取样式）；
+3.speed:变化速度，向上取整，避免出现小数闪烁或达不到目标要求；[后期会进行speed的参数化]
+4.opacity:颜色属性变化，通过getStyle获取样式并且兼容IE，Firefox；
